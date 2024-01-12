@@ -25,5 +25,17 @@ int main()
         std::cout << Figures[fig]->getType() << "\t" << Figures[fig]->volume << "\t" << Figures[fig]->square << std::endl;
     }
     
+    test_line.scaleX(3);
+    test_sqr.scaleY(-2);
+    test_cube.scaleZ(5);
+    
+    std::cout << "\nScaled\n" << std::endl;
+    
+    std::cout << "Figure\tvolume\tsquare\n";
+    for (unsigned int fig = 0; fig < sizeof(Figures) / sizeof(Figures[0]); fig++)
+    {
+        std::cout << Figures[fig]->getType() << "\t" << Figures[fig]->volume << "\t" << Figures[fig]->square << std::endl;
+    }
+    
     return 0;
 }

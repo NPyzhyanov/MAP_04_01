@@ -15,6 +15,52 @@ public:
 		x3 = _x1; y3 = _y2;
 		x4 = _x2; y4 = _y1;
         
+        update_parameters();
+    }
+    
+    void shift(int sh_x, int sh_y) override
+    {
+        x1 += sh_x; y1 += sh_y;
+        x2 += sh_x; y2 += sh_y;
+        x3 += sh_x; y3 += sh_y;
+        x4 += sh_x; y4 += sh_y;
+        
+        update_parameters();
+    }
+    
+    void scaleX(int factor) override
+    {
+        x1 *= factor;
+        x2 *= factor;
+        x3 *= factor;
+        x4 *= factor;
+        
+        update_parameters();
+    }
+    
+    void scaleY(int factor) override
+    {
+        y1 *= factor;
+        y2 *= factor;
+        y3 *= factor;
+        y4 *= factor;
+        
+        update_parameters();
+    }
+    
+    void scale(int divisor) override
+    {
+        x1 /= divisor; y1 /= divisor;
+        x2 /= divisor; y2 /= divisor;
+        x3 /= divisor; y3 /= divisor;
+        x4 /= divisor; y4 /= divisor;
+        
+        update_parameters();
+    }
+    
+protected:
+    void update_parameters() override
+    {
         int a = abs(x1 - x2);
         int b = abs(y1 - y2);
         

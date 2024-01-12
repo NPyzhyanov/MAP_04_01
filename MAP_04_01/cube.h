@@ -19,6 +19,82 @@ public:
 		x7 = _x2; y7 = _y2; z7 = _z1;
 		x8 = _x1; y8 = _y2; z8 = _z1;
         
+        update_parameters();
+    }
+    
+    void shift(int sh_x, int sh_y, int sh_z) override
+    {
+        x1 += sh_x; y1 += sh_y; z1 += sh_z;
+        x2 += sh_x; y2 += sh_y; z2 += sh_z;
+        x3 += sh_x; y3 += sh_y; z3 += sh_z;
+        x4 += sh_x; y4 += sh_y; z4 += sh_z;
+        x5 += sh_x; y5 += sh_y; z5 += sh_z;
+        x6 += sh_x; y6 += sh_y; z6 += sh_z;
+        x7 += sh_x; y7 += sh_y; z7 += sh_z;
+        x8 += sh_x; y8 += sh_y; z8 += sh_z;
+        
+        update_parameters();
+    }
+    
+    void scaleX(int factor) override
+    {
+        x1 *= factor;
+        x2 *= factor;
+        x3 *= factor;
+        x4 *= factor;
+        x5 *= factor;
+        x6 *= factor;
+        x7 *= factor;
+        x8 *= factor;
+        
+        update_parameters();
+    }
+    
+    void scaleY(int factor) override
+    {
+        y1 *= factor;
+        y2 *= factor;
+        y3 *= factor;
+        y4 *= factor;
+        y5 *= factor;
+        y6 *= factor;
+        y7 *= factor;
+        y8 *= factor;
+        
+        update_parameters();
+    }
+    
+    void scaleZ(int factor) override
+    {
+        z1 *= factor;
+        z2 *= factor;
+        z3 *= factor;
+        z4 *= factor;
+        z5 *= factor;
+        z6 *= factor;
+        z7 *= factor;
+        z8 *= factor;
+        
+        update_parameters();
+    }
+    
+    void scale(int divisor) override
+    {
+        x1 /= divisor; y1 /= divisor; z1 /= divisor;
+        x2 /= divisor; y2 /= divisor; z2 /= divisor;
+        x3 /= divisor; y3 /= divisor; z3 /= divisor;
+        x4 /= divisor; y4 /= divisor; z4 /= divisor;
+        x5 /= divisor; y5 /= divisor; z5 /= divisor;
+        x6 /= divisor; y6 /= divisor; z6 /= divisor;
+        x7 /= divisor; y7 /= divisor; z7 /= divisor;
+        x8 /= divisor; y8 /= divisor; z8 /= divisor;
+        
+        update_parameters();
+    }
+    
+protected:
+    void update_parameters() override
+    {
         int a = abs(x1 - x2);
         int b = abs(y1 - y2);
         int c = abs(z1 - z2);

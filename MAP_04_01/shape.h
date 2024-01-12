@@ -8,9 +8,16 @@ public:
 	static const int cube = 2;
 	static const int circle = 3;
 	static const int cylinder = 4;
-	Shape() = default;
     
 	int getType() { return type; }
+    
+    virtual void shift(int, int) {}
+    virtual void shift(int, int, int) {}
+    
+    virtual void scaleX(int) {}
+    virtual void scaleY(int) {}
+    virtual void scaleZ(int) {}
+    virtual void scale(int) {}
 
 	int type;
     
@@ -18,4 +25,8 @@ public:
 	double square;
 	double height;
 	double radius;
+    
+protected:
+    virtual void update_parameters() {}
+    
 };
