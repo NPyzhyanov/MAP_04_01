@@ -2,15 +2,20 @@
 #include <vector>
 
 #include "shape.h"
-#include "transform.h"
+#include "line.h"
+#include "sqr.h"
+#include "cube.h"
+#include "circle.h"
+#include "cylinder.h"
+//#include "transform.h"
 
 int main()
-{
-    Shape test_line(0, 5, 3, 99, 8, 7, 99);
-    Shape test_sqr(1, -10, -10, 99, 30, 15, 99);
-    Shape test_cube(2, 8, 7, 6, 10, 10, 10);
-    Shape test_circle(3, -4, 2, 2.52313, 99);
-    Shape test_cilinder(4, 7, 16, 1.78412, 4.5);
+{                                                   //  volume   square
+    Line test_line(5, 3, 8, 7);                     //  0       0
+    Sqr test_sqr(-10, -10, 30, 15);                 //  0       1000   
+    Cube test_cube(8, 7, 6, 10, 10, 10);            //  24      52
+    Circle test_circle(-4, 2, 2.52313);             //  0       20
+    Cylinder test_cilinder(7, 16, 1.78412, 4.5);    //  44.9998 70.4447
     
     Shape* Figures[] = {&test_line, &test_sqr, &test_cube, &test_circle, &test_cilinder};
     
