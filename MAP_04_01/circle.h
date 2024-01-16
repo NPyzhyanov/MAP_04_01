@@ -15,18 +15,17 @@ public:
     {
         type = 3;
         
-        x1 = _x1;
-        y1 = _y1;
+        dimensions = 2;
+        points_amount = 1;
+        
+        std::vector<int> center {_x1, _y1 };
+        Coordinates.push_back(center);
         
         radius = r;
         square = M_PI * r * r;
         height = 0;
         volume = 0;
     }
-    
-private:
-    int x1, y1;
-    
 };
 
 #endif // CIRCLE_H

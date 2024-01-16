@@ -11,7 +11,7 @@
 
 int main()
 {                                                   //  volume   square
-    Line test_line(5, 3, 8, 7);                     //  0       0
+    Line test_line(5, 3, 8, 9);                     //  0       0
     Sqr test_sqr(-10, -10, 30, 15);                 //  0       1000   
     Cube test_cube(8, 7, 6, 10, 10, 10);            //  24      52
     Circle test_circle(-4, 2, 2.52313);             //  0       20
@@ -36,6 +36,10 @@ int main()
     {
         std::cout << Figures[fig]->getType() << "\t" << Figures[fig]->volume << "\t" << Figures[fig]->square << std::endl;
     }
+    
+    test_sqr.print_coordinates("Square before shifting");
+    test_sqr.shift(18, 4);
+    test_sqr.print_coordinates("Square after shifting at 18 along x-axis and 4 along y-axis");
     
     return 0;
 }

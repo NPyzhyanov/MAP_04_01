@@ -10,50 +10,13 @@ public:
     {
         type = 1;
         
-        x1 = _x1; y1 = _y1;
-		x2 = _x2; y2 = _y2;
-		x3 = _x1; y3 = _y2;
-		x4 = _x2; y4 = _y1;
+        dimensions = 2;
+        points_amount = 4;
         
-        update_parameters();
-    }
-    
-    void shift(int sh_x, int sh_y) override
-    {
-        x1 += sh_x; y1 += sh_y;
-        x2 += sh_x; y2 += sh_y;
-        x3 += sh_x; y3 += sh_y;
-        x4 += sh_x; y4 += sh_y;
+        std::vector<int> extreme_point_1 {_x1, _y1 };
+        std::vector<int> extreme_point_2 {_x2, _y2 };
         
-        update_parameters();
-    }
-    
-    void scaleX(int factor) override
-    {
-        x1 *= factor;
-        x2 *= factor;
-        x3 *= factor;
-        x4 *= factor;
-        
-        update_parameters();
-    }
-    
-    void scaleY(int factor) override
-    {
-        y1 *= factor;
-        y2 *= factor;
-        y3 *= factor;
-        y4 *= factor;
-        
-        update_parameters();
-    }
-    
-    void scale(int divisor) override
-    {
-        x1 /= divisor; y1 /= divisor;
-        x2 /= divisor; y2 /= divisor;
-        x3 /= divisor; y3 /= divisor;
-        x4 /= divisor; y4 /= divisor;
+        fill_coordinates(extreme_point_1, extreme_point_2);
         
         update_parameters();
     }
@@ -61,6 +24,11 @@ public:
 protected:
     void update_parameters() override
     {
+        int x1 = (Coordinates.at(0)).at(0);
+        int x2 = (Coordinates.at(points_amount - 1)).at(0);
+        int y1 = (Coordinates.at(0)).at(1);
+        int y2 = (Coordinates.at(points_amount - 1)).at(1);
+        
         int a = abs(x1 - x2);
         int b = abs(y1 - y2);
         
@@ -69,13 +37,6 @@ protected:
         radius = 0;
         height = 0;
     }
-    
-private:
-    int x1, y1,
-        x2, y2,
-        x3, y3,
-        x4, y4;
-    
 };
 
 #endif // SQR_H

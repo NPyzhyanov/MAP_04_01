@@ -15,18 +15,17 @@ public:
     {
         type = 4;
         
-        x1 = _x1;
-        y1 = _y1;
+        dimensions = 2;
+        points_amount = 1;
+        
+        std::vector<int> center {_x1, _y1 };
+        Coordinates.push_back(center);
         
         radius = r;
         height = h;
         square = 2 * M_PI * r * r + 2 * M_PI * r * h;
         volume = M_PI * r * r * h;
     }
-    
-private:
-    int x1, y1;
-    
 };
 
 #endif // CYLINDER_H
