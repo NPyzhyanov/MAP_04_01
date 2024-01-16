@@ -1,12 +1,7 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 
-#ifndef _USE_MATH_DEFINES
-#define _USE_MATH_DEFINES
-#endif // _USE_MATH_DEFINES
-
 #include "shape.h"
-#include<cmath>
 
 class Circle : public Shape
 {
@@ -22,7 +17,7 @@ public:
         Coordinates.push_back(center);
         
         radius = r;
-        square = M_PI * r * r;
+        square = pi * r * r;
         height = 0;
         volume = 0;
     }

@@ -117,5 +117,7 @@ protected:
         }
         Coordinates.shrink_to_fit();
     }
+
+    const double pi = 3.14159265358979;
     
 };
